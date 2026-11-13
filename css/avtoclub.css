@@ -253,3 +253,13 @@ html[data-theme="dark"] .acm-lbl{fill:rgba(255,255,255,.8)}
   #contacts .vl-ol li>span:first-child::after{content:" · "}
   #contacts .vl-offs{padding:4px 12px}
 }
+
+/* текст не выходит за плашки (Сергей 13.11): на телефоне у таблицы с тремя ценами категория — строкой над ценами, «от» — над суммой */
+@media (max-width:767px){
+  .ac-tbl:not(.ac-c1,.ac-c2) .ac-tr{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:4px}
+  .ac-tbl:not(.ac-c1,.ac-c2) .ac-tr .ac-c{grid-column:1/-1}
+  .ac-tbl:not(.ac-c1,.ac-c2) .ac-th span:first-child{display:none}
+  .ac-th span{overflow-wrap:anywhere}
+  .ac-tbl:not(.ac-c1,.ac-c2) .ac-tr>b{white-space:normal;font-size:14px}
+  .ac-tr>b .ot{display:block;font-size:11px;font-weight:600;color:var(--muted)}
+}
